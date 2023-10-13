@@ -66,7 +66,7 @@ std::shared_ptr<OccLockBuckets> MakeSharedOccLockBuckets(
     size_t bucket_count, bool cache_aligned = false);
 
 struct OptimisticTransactionDBOptions {
-  OccValidationPolicy validate_policy = OccValidationPolicy::kValidateParallel;
+  OccValidationPolicy validate_policy = OccValidationPolicy::kValidateSerial;
 
   // Number of striped/bucketed mutex locks for validating transactions.
   // Used on only if validate_policy == OccValidationPolicy::kValidateParallel
